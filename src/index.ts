@@ -5,7 +5,7 @@ import { hostname } from "os";
 const app = new Hono();
 
 app.get("/", (c) => {
-  return c.text(`Hello from ${hostname()}!`);
+  return c.text(`Hello from ${hostname()}!, Env Vars: DB_URL: ${process.env.DB_URL}. Service Name: ${process.env.SERVICE_NAME}`);
 });
 
 serve(
